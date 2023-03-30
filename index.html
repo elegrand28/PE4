@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Evan Le Grand</title>
+  <!-- Chargement des fichiers CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Evan Le Grand</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#projets">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#stages">Stages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/front_end/epreuve.html">Épreuve E4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Section Profil-->
+  <section id="profil" class="py-5">
+    <div className="header_container">
+      <h2 class="text-center mb-5">Evan Le Grand</h2>
+      <div class="text-center">
+        <a href="/back_end/CV Evan Le Grand.pdf" download="CV Evan Le Grand">
+          <button type="button" class="btn btn-secondary">Download CV</button>
+        </a>
+      </div>
+      <br>
+      <br>
+      <div class="text-center">
+        <img src="/back_end/photoexemple.png" class="rounded-cirlcle">
+      </div>
+      <!---->
+      <!-- Ajouter liens sociaux-->
+    </div>
+  </section>
+  <!-- Section Projets -->
+  <section id="projets" class="py-5">
+    <div class="container text-center">
+      <h2 class="text-center mb-5">Projets de cours</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="/back_end/waiting logo.png" class="card-img-top" alt="[Titre du projet]">
+            <div class="card-body">
+              <h5 class="card-title">[Titre du projet]</h5>
+              <p class="card-text">[Description du projet]</p>
+              <a href="/back_end/waiting logo.png" class="btn btn-primary">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Stages -->
+  <section id="stages" class="py-5 bg-light ">
+    <div class="container text-center">
+      <h2 class="text-center mb-5">Stages</h2>
+      <div class="row">
+
+        <div class="col">
+          <div class="card">
+            <img src="/back_end/synapsy.jpg" class="card-img-top" alt="[Titre du stage]">
+            <div class="card-body">
+              <h5 class="card-title">Entreprise de développement de progiciel de caisse</h5>
+              <a href="/front_end/synapsy.html" class="btn btn-primary">Voir le stage</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <img src="/back_end/logoFCTPB.png" class="card-img-top" alt="[Titre du stage]">
+            <div class="card-body">
+              <h5 class="card-title">Club de foot de Trébeurden</h5>
+              <a href="/front_end/fctpb.html" class="btn btn-primary">Voir le stage</a>
+            </div>
+          </div>
+        </div>       
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Contactez-moi</h2>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <form action="mailto:elegrand.ledantec@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea name="message" class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-dark py-3">
+    <div class="container">
+      <p class="text-center text-white">&copy; 2022 - 2023 - Evan Le Grand</p>
+    </div>
+  </footer>
+  <!-- Chargement des fichiers JavaScript de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Fonction scrollling
+      $("a").on('click', function(event) {
+    
+        
+        if (this.hash !== "") {
+          
+          event.preventDefault();
+    
+          
+          var hash = this.hash;
+    
+          
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+           
+            window.location.hash = hash;
+          });
+        } 
+      });
+    });
+    </script>
+</body>
+</html>
+
