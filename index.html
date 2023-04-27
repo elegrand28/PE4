@@ -6,6 +6,58 @@
   <title>Portfolio de Evan Le Grand</title>
   <!-- Chargement des fichiers CSS de Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+    /* Style pour le popup */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      display: none;
+    }
+
+    .popup img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .popup h2 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .popup button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f26d6d;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup button:hover {
+      background-color: #e64444;
+    }
+
+  </style>
 </head>
 <body>
   <!-- Barre de navigation -->
@@ -68,9 +120,17 @@
             <img src="/PE4/back_end/waiting logo.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Le métier de ??????</h5>
-              <a href="/PE4/back_end/waiting logo.png" class="btn btn-primary">Voir le projet</a>
+              <a href="/PE4/back_end/waiting logo.png"></a>
+              <button class="btn btn-primary" onclick="document.getElementById('popup-projet1').style.display='block'">Voir le projet</button>
             </div>
           </div>
+        </div>
+
+        <div id="popup-projet1" class="popup">
+          <img src="/PE4/back_end/waiting logo.png">
+          <h2>Titre de l'image 1</h2>
+          <p>Description de l'image 1.</p>
+          <button onclick="document.getElementById('popup-projet1').style.display='none'">Fermer</button>
         </div>
 
         <div class="col-md-3">
@@ -78,9 +138,17 @@
             <img src="/PE4/back_end/waiting logo.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">EGNARO</h5>
-              <a href="/PE4/back_end/waiting logo.png" class="btn btn-primary">Voir le projet</a>
+              <a href="/PE4/back_end/waiting logo.png"></a>
+              <button class="btn btn-primary" onclick="document.getElementById('popup-projet2').style.display='block'">Voir le projet</button>
             </div>
           </div>
+        </div>
+
+        <div id="popup-projet2" class="popup">
+          <img src="/PE4/back_end/architecture-reseau.jpg">
+          <h2>Titre de l'image 1</h2>
+          <p>Description de l'image 1.</p>
+          <button onclick="document.getElementById('popup-projet2').style.display='none'">Fermer</button>
         </div>
 
         <div class="col-md-3">
@@ -88,9 +156,17 @@
             <img src="/PE4/back_end/waiting logo.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Stage SIO</h5>
-              <a href="/PE4/back_end/waiting logo.png" class="btn btn-primary">Voir le projet</a>
+              <a href="/PE4/back_end/waiting logo.png"></a>
+              <button class="btn btn-primary" onclick="document.getElementById('popup-projet3').style.display='block'">Voir le projet</button>
             </div>
           </div>
+        </div>
+
+        <div id="popup-projet3" class="popup">
+          <img src="/PE4/back_end/waiting logo.png">
+          <h2>Titre de l'image 1</h2>
+          <p>Description de l'image 1.</p>
+          <button onclick="document.getElementById('popup-projet3').style.display='none'">Fermer</button>
         </div>
 
         <div class="col-md-3">
@@ -98,9 +174,17 @@
             <img src="/PE4/back_end/waiting logo.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Le Bric à Brac</h5>
-              <a href="/PE4/back_end/waiting logo.png" class="btn btn-primary">Voir le projet</a>
+              <a href="/PE4/back_end/waiting logo.png"></a>
+              <button class="btn btn-primary" onclick="document.getElementById('popup-projet4').style.display='block'">Voir le projet</button>
             </div>
           </div>
+        </div>
+        
+        <div id="popup-projet4" class="popup">
+          <img src="/PE4/back_end/waiting logo.png">
+          <h2>Titre de l'image 1</h2>
+          <p>Description de l'image 1.</p>
+          <button onclick="document.getElementById('popup-projet4').style.display='none'">Fermer</button>
         </div>
 
       </div>
@@ -118,7 +202,8 @@
             <img src="/PE4/back_end/synapsy.jpg" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Entreprise de développement de progiciel de caisse</h5>
-              <a href="/PE4/front_end/synapsy.html" class="btn btn-primary">Voir le stage</a>
+              <a href="/PE4/front_end/synapsy.html"></a>
+              <button class="btn btn-primary" href="/PE4/front_end/synapsy.html">Voir le stage</button>
               <br>
               <br>
               <div class="container text-center">
@@ -135,7 +220,8 @@
             <img src="/PE4/back_end/logoFCTPB.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Club de foot de Trébeurden</h5>
-              <a href="/PE4/front_end/fctpb.html" class="btn btn-primary">Voir le stage</a>
+              <a href="/PE4/front_end/fctpb.html"></a>
+              <button class="btn btn-primary" onclick="document.getElementById('popup2').style.display='block'">Voir le stage</button>
               <br>
               <br>
               <div class="container text-center">
@@ -147,6 +233,13 @@
           </div>
         </div>       
         
+        <div id="popup2" class="popup">
+          <img src="/PE4/back_end/assistance.webp">
+          <h2>Titre de l'image 1</h2>
+          <p>Description de l'image 1.</p>
+          <button onclick="document.getElementById('popup2').style.display='none'">Fermer</button>
+        </div>
+
       </div>
     </div>
   </section>
