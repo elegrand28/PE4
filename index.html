@@ -6,7 +6,7 @@
   <title>Portfolio de Evan Le Grand</title>
   <!-- Chargement des fichiers CSS de Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">  
   <style>
     /* Style pour le popup */
     .popup {
@@ -57,12 +57,127 @@
       background-color: #e64444;
     }
 
+    .main-timeline {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #939597;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #939597;
+  border: 5px solid #f5df4d;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline {
+    width: 50%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .left::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
   </style>
 </head>
 <body>
   <!-- Barre de navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Evan Le Grand</a>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#profil">Evan Le Grand</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,9 +201,11 @@
       </ul>
     </div>
   </nav>
-  <!-- Rajout Tableau de compétences-->
   <!-- Section Profil-->
   <section id="profil" class="py-5">
+    <br>
+    <br>
+    <br>
     <div className="header_container">
       <h2 class="text-center mb-5">Evan Le Grand</h2>
       <div class="text-center">
@@ -98,8 +215,16 @@
       </div>
       <br>
       <br>
-      <div class="text-center">
-        <img src="/PE4/back_end/photoexemple.png" class="rounded-cirlcle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <img src="/PE4/back_end/photo-profil.JPG" class="img-fluid rounded-circle">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/evan-le-grand-362718252/"><button type="button" class="btn btn-lg btn-link"><span class="bi bi-linkedin"></span></button></a>
+        <a href="https://github.com/elegrand28"><button type="button" class="btn btn-lg btn-link"><span class="bi bi-github"></span></button></a>
       </div>
       <!---->
       <!-- Ajouter liens sociaux-->
@@ -108,6 +233,44 @@
   <section id="parcours" class="py-5 bg-light">
     <div className="header_container">
       <h2 class="text-center mb-5">Mon Parcours</h2>
+      <div class="main-timeline">
+        <div class="timeline left">
+          <div class="card">
+            <div class="card-body p-4">
+              <h3>2021 - Aujourd'hui</h3>
+              <h5>BTS Services Informatiques aux Organisations (SIO) Option SLAM</h5>
+              <p class="mb-0">Lycée Félix le Datec, Lannion</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline right">
+          <div class="card">
+            <div class="card-body p-4">
+              <h3>2019 - 2021</h3>
+              <h5>BAC Sciences et Technologies de l'Industrie et du Développement Durable (STI2D) Option SIN</h5>
+              <p class="mb-0">Lycée Félix le Datec, Lannion</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline left">
+          <div class="card">
+            <div class="card-body p-4">
+              <h3>2018 - 2019</h3>
+              <h5>Seconde Générale</h5>
+              <p class="mb-0">Lycée Félix le Datec, Lannion</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline right">
+          <div class="card">
+            <div class="card-body p-4">
+              <h3>2014 - 2018</h3>
+              <h5>Collège</h5>
+              <p class="mb-0">Collège Saint-Joseph, Lannion</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- Section Projets -->
@@ -128,7 +291,7 @@
 
         <div id="popup-projet1" class="popup">
           <img src="/PE4/back_end/waiting logo.png">
-          <h2>Titre de l'image 1</h2>
+          <h2>Le métier de ??????</h2>
           <p>Description de l'image 1.</p>
           <button onclick="document.getElementById('popup-projet1').style.display='none'">Fermer</button>
         </div>
@@ -146,7 +309,7 @@
 
         <div id="popup-projet2" class="popup">
           <img src="/PE4/back_end/architecture-reseau.jpg">
-          <h2>Titre de l'image 1</h2>
+          <h2>EGNARO</h2>
           <p>Description de l'image 1.</p>
           <button onclick="document.getElementById('popup-projet2').style.display='none'">Fermer</button>
         </div>
@@ -164,7 +327,7 @@
 
         <div id="popup-projet3" class="popup">
           <img src="/PE4/back_end/waiting logo.png">
-          <h2>Titre de l'image 1</h2>
+          <h2>Stage SIO</h2>
           <p>Description de l'image 1.</p>
           <button onclick="document.getElementById('popup-projet3').style.display='none'">Fermer</button>
         </div>
@@ -182,7 +345,7 @@
         
         <div id="popup-projet4" class="popup">
           <img src="/PE4/back_end/waiting logo.png">
-          <h2>Titre de l'image 1</h2>
+          <h2>Le Bric à Brac</h2>
           <p>Description de l'image 1.</p>
           <button onclick="document.getElementById('popup-projet4').style.display='none'">Fermer</button>
         </div>
@@ -202,8 +365,7 @@
             <img src="/PE4/back_end/synapsy.jpg" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Entreprise de développement de progiciel de caisse</h5>
-              <a href="/PE4/front_end/synapsy.html"></a>
-              <button class="btn btn-primary" href="/PE4/front_end/synapsy.html">Voir le stage</button>
+              <a class="btn btn-primary" href="/PE4/front_end/synapsy.html">Voir le stage</a>
               <br>
               <br>
               <div class="container text-center">
@@ -220,8 +382,7 @@
             <img src="/PE4/back_end/logoFCTPB.png" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Club de foot de Trébeurden</h5>
-              <a href="/PE4/front_end/fctpb.html"></a>
-              <button class="btn btn-primary" onclick="document.getElementById('popup2').style.display='block'">Voir le stage</button>
+              <a class="btn btn-primary" href="/PE4/front_end/fctpb.html">Voir le stage</a>
               <br>
               <br>
               <div class="container text-center">
